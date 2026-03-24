@@ -58,7 +58,7 @@ export function loadConfig(): OrchestratorConfig {
   return {
     port: optionalInt("PORT", 3000),
     orbApiUrl: optional("ORB_API_URL", "https://api.orbcloud.dev"),
-    orbApiKey: required("ORB_API_KEY"),
+    orbApiKey: optional("ORB_API_KEY", ""),
     orbTemplate: optional("ORB_TEMPLATE", "steel-browser"),
     apiKeys: optional("API_KEYS", "")
       .split(",")

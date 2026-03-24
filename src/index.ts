@@ -60,9 +60,13 @@ async function main() {
     config
   );
 
-  // Initialize warm pool (provision initial VMs)
-  await warmPool.initialize();
-  warmPool.startMaintenance();
+  // Initialize warm pool (only if Orb API key is configured)
+  if (config.orbApiKey) {
+    await warmPool.initialize();
+    warmPool.startMaintenance();
+  } else {
+    console.log("⚠ No ORB_API_KEY — warm pool disabled. Sessions will fail until key is set.");
+  }
 
   // Start session router background tasks
   sessionRouter.start();

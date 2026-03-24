@@ -1,0 +1,35 @@
+[agent]
+name = "steel-orchestrator"
+lang = "node"
+entry = "dist/index.js"
+
+[agent.env]
+PORT = "3000"
+ORB_API_URL = "https://api.orbcloud.dev"
+ORB_API_KEY = "${ORB_API_KEY}"
+ORB_TEMPLATE = "steel-browser"
+WARM_POOL_MIN = "0"
+WARM_POOL_MAX = "0"
+SESSION_TIMEOUT_MS = "1800000"
+CONTEXT_STORE_PATH = "./data/contexts"
+
+[source]
+git = "https://github.com/nextbysam/steel-orchestrator.git"
+branch = "main"
+
+[build]
+steps = [
+  "npm ci",
+  "npx tsc"
+]
+working_dir = "/agent/code"
+
+[backend]
+provider = "custom"
+
+[ports]
+expose = [3000]
+
+[resources]
+runtime = "1GB"
+disk = "2GB"
