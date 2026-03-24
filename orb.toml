@@ -6,7 +6,7 @@ entry = "dist/index.js"
 [agent.env]
 PORT = "3000"
 ORB_API_URL = "https://api.orbcloud.dev"
-ORB_API_KEY = "${ORB_API_KEY}"
+ORB_API_KEY = "orb_xhi1LOyzFE5gmkA54MnIhYT7xWzY3rHQv2rd0IwM4Dc"
 ORB_TEMPLATE = "steel-browser"
 WARM_POOL_MIN = "0"
 WARM_POOL_MAX = "0"
