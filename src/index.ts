@@ -12,12 +12,12 @@
 import Fastify from "fastify";
 import websocket from "@fastify/websocket";
 import cors from "@fastify/cors";
-import { loadConfig } from "./config.js";
-import { OrbClient } from "./orb-client.js";
-import { SessionRouter } from "./session-router.js";
-import { WarmPool } from "./warm-pool.js";
-import { ContextStore } from "./context-store.js";
-import { registerRoutes } from "./routes.js";
+import { loadConfig } from "./config";
+import { OrbClient } from "./orb-client";
+import { SessionRouter } from "./session-router";
+import { WarmPool } from "./warm-pool";
+import { ContextStore } from "./context-store";
+import { registerRoutes } from "./routes";
 
 async function main() {
   const config = loadConfig();

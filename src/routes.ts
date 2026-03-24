@@ -13,14 +13,14 @@
 
 import type { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import { WebSocket } from "ws";
-import { validateApiKey, type AuthConfig } from "./auth.js";
+import { validateApiKey, type AuthConfig } from "./auth";
 import {
   SessionRouter,
   SessionNotFoundError,
   SessionLimitError,
-} from "./session-router.js";
-import { WarmPool } from "./warm-pool.js";
-import { ContextStore } from "./context-store.js";
+} from "./session-router";
+import { WarmPool } from "./warm-pool";
+import { ContextStore } from "./context-store";
 
 interface RouteContext {
   sessionRouter: SessionRouter;

@@ -8,7 +8,7 @@
  * VMs are recycled after maxAge to prevent Chrome memory leak accumulation.
  */
 
-import { OrbClient, type OrbVM } from "./orb-client.js";
+import { OrbClient, type OrbVM } from "./orb-client";
 
 interface PoolEntry {
   vm: OrbVM;

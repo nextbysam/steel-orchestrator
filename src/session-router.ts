@@ -13,10 +13,10 @@
  * - Auto-cleanup timed-out sessions
  */
 
-import { OrbClient, type OrbVM } from "./orb-client.js";
-import { WarmPool } from "./warm-pool.js";
-import { ContextStore } from "./context-store.js";
-import type { OrchestratorConfig } from "./config.js";
+import { OrbClient, type OrbVM } from "./orb-client";
+import { WarmPool } from "./warm-pool";
+import { ContextStore } from "./context-store";
+import type { OrchestratorConfig } from "./config";
 
 export interface SessionEntry {
   sessionId: string;
