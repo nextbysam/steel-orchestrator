@@ -51,7 +51,12 @@ async function main() {
   });
 
   const contextStore = new ContextStore(config.contextStorePath);
-  await contextStore.initialize();
+  try {
+    await contextStore.initialize();
+  } catch (err) {
+    console.warn("⚠ Could not initialize context store:", (err as Error).message);
+    console.warn("  Session persistence will not work until the directory is writable.");
+  }
 
   const sessionRouter = new SessionRouter(
     orbClient,
@@ -117,6 +122,14 @@ async function main() {
     `  Create a session: curl -X POST http://localhost:${config.port}/v1/sessions -H "Authorization: Bearer <key>"`
   );
 }
+
+process.on("uncaughtException", (err) => {
+  console.error("UNCAUGHT EXCEPTION:", err);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("UNHANDLED REJECTION:", err);
+});
 
 main().catch((err) => {
   console.error("Fatal error:", err);
