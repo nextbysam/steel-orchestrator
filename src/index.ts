@@ -73,13 +73,7 @@ async function main() {
 
   // Create Fastify app
   const app = Fastify({
-    logger: {
-      level: "info",
-      transport: {
-        target: "pino/file",
-        options: { destination: 1 }, // stdout
-      },
-    },
+    logger: true,
   });
 
   await app.register(cors);
