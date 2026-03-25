@@ -41,7 +41,6 @@ async function main() {
   const orbClient = new OrbClient({
     apiUrl: config.orbApiUrl,
     apiKey: config.orbApiKey,
-    template: config.orbTemplate,
   });
 
   const warmPool = new WarmPool(orbClient, {
